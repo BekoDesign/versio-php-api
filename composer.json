@@ -3,7 +3,7 @@
     "description": "PHP implementation of the new Restfull Versio API",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0-dev",
+    "version": "1.0.0",
     "support": {
         "email": "support@bekodesign.com",
         "issues": "https://github.com/BekoDesign/Versio-PHP-API/issues"
