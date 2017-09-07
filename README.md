@@ -1,4 +1,5 @@
 [![Packagist](https://img.shields.io/packagist/dt/bekodesign/versio-php-api.svg)](https://packagist.org/packages/bekodesign/versio-php-api)
+[![Build Status](https://travis-ci.org/BekoDesign/versio-php-api.svg?branch=master)](https://travis-ci.org/BekoDesign/versio-php-api)
 [![GitHub tag](https://img.shields.io/github/tag/bekodesign/versio-php-api.svg)](https://github.com/BekoDesign/versio-php-api/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
