@@ -22,7 +22,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     {
         parent::__construct($name, $data, $dataName);
 
-        print $_SERVER['SERVER_ADDR'];
+        print_r($_SERVER);
 
         if(file_exists(__DIR__ . '/../.env')) {
             $dotenv = new \Dotenv\Dotenv(__DIR__ . '/../');
