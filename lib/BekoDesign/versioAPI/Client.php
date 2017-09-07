@@ -8,6 +8,7 @@ use BekoDesign\versioAPI\Models\DnsTemplate;
 use BekoDesign\versioAPI\Models\Domain;
 use BekoDesign\versioAPI\Models\Reseller;
 use BekoDesign\versioAPI\Models\ResellerPlan;
+use BekoDesign\versioAPI\Models\TLD;
 use BekoDesign\versioAPI\Models\Webhosting;
 use BekoDesign\versioAPI\Models\WebhostingPlan;
 use Http\Discovery\HttpClientDiscovery;
@@ -109,6 +110,13 @@ class Client implements IClient
      */
     public function resellerPlans() : ResellerPlan {
         return new ResellerPlan($this);
+    }
+
+    /**
+     * @return TLD
+     */
+    public function tld() : TLD {
+        return new TLD($this);
     }
 
     /**
