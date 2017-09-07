@@ -21,7 +21,7 @@ Download [release](https://github.com/bekodesign/Versio-PHP-API/releases "Github
 
 ## Usage
 
-**@Todo:** Write documentation
+Please reference the [Wiki pages](https://github.com/BekoDesign/Versio-PHP-API/wiki) for the documentation.
 
 ## Testing
 
