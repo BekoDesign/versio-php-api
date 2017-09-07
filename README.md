@@ -1,4 +1,5 @@
 [![Packagist](https://img.shields.io/packagist/v/BekoDesign/versioAPI.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Versio-PHP-API
 PHP implementation of the new Restfull Versio API (https://www.versio.nl/RESTapidoc/)
@@ -42,7 +43,7 @@ You can also change the host to versio.uk, versio.nl, versio.be, versio.eu. But 
 
 ## License
 
-This project is released under the [MIT][link-license] License.
+This project is released under the [MIT](https://github.com/beko1997/Versio-PHP-API/blob/master/LICENSE) License.
 
 ## Issues
 
