@@ -2,13 +2,14 @@
 namespace BekoDesign\versioAPI;
 
 use BekoDesign\versioAPI\Contracts\IClient;
-use BekoDesign\versioAPI\Contracts\IResellerPlan;
 use BekoDesign\versioAPI\Models\Category;
 use BekoDesign\versioAPI\Models\Contact;
 use BekoDesign\versioAPI\Models\DnsTemplate;
 use BekoDesign\versioAPI\Models\Domain;
 use BekoDesign\versioAPI\Models\Reseller;
 use BekoDesign\versioAPI\Models\ResellerPlan;
+use BekoDesign\versioAPI\Models\Webhosting;
+use BekoDesign\versioAPI\Models\WebhostingPlan;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Message\Authentication;
 use Http\Message\Authentication\BasicAuth;
@@ -108,6 +109,20 @@ class Client implements IClient
      */
     public function resellerPlans() : ResellerPlan {
         return new ResellerPlan($this);
+    }
+
+    /**
+     * @return Webhosting
+     */
+    public function webhosting() : Webhosting {
+        return new Webhosting($this);
+    }
+
+    /**
+     * @return WebhostingPlan
+     */
+    public function webhostingPlans() : WebhostingPlan {
+        return new WebhostingPlan($this);
     }
 
     /**
