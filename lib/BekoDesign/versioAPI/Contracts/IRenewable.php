@@ -14,4 +14,6 @@ interface IRenewable
     public function renewAsync($key, $data = [], $urlPostfix = '') : Promise;
 
     public function renewRequest($key, $data = [], $urlPostfix = '') : RequestInterface;
+
+    public function getRenewUrl($key, $data = [], $urlPostfix = '') : string;
 }

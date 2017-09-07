@@ -14,4 +14,6 @@ interface IListable
     public function listAsync($data = [], $urlPostfix = '') : Promise;
 
     public function listRequest($data = [], $urlPostfix = '') : RequestInterface;
+
+    public function getListUrl($data = [], $urlPostfix = '') : string;
 }

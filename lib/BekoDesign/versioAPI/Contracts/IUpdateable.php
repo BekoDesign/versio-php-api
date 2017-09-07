@@ -14,4 +14,7 @@ interface IUpdateable
     public function updateAsync($id, $data = [], $urlPostfix = '') : Promise;
 
     public function updateRequest($id, $data = [], $urlPostfix = '') : RequestInterface;
+
+    public function getUpdateUrl($key, $data = [], $urlPostfix = '') : string;
+
 }

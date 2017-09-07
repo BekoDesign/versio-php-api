@@ -39,9 +39,14 @@ trait Renewable
      */
     public function renewRequest($id, $data = [], $urlPostfix = '') : RequestInterface
     {
-        $request = new Request('POST', $this->endpoint . '/' . $id . '/renew' . $urlPostfix);
+        $request = new Request('POST', $this->getRenewUrl($id, $data, $urlPostfix));
         $request = $request->withBody(\GuzzleHttp\Psr7\stream_for(\GuzzleHttp\json_encode($data)));
 
         return $request;
     }
+
+    public function getRenewUrl($key, $data = [], $urlPostfix = '') : string {
+        return $this->endpoint . '/' . $key . '/renew' . $urlPostfix;
+    }
+
 }

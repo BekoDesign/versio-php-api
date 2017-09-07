@@ -48,9 +48,18 @@ trait Listable
      */
     public function listRequest($data = [], $urlPostfix = '') : RequestInterface
     {
-        $request = new Request('GET', $this->endpoint . $urlPostfix);
+        $request = new Request('GET', $this->getListUrl($data, $urlPostfix));
         $request->withBody(\GuzzleHttp\Psr7\stream_for(\GuzzleHttp\json_encode($data)));
 
         return $request;
+    }
+
+    /**
+     * @param array $data
+     * @param string $urlPostfix
+     * @return string
+     */
+    public function getListUrl($data = [], $urlPostfix = '') : string {
+        return $this->endpoint . $urlPostfix;
     }
 }

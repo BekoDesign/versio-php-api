@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Tests\BaseTest;
 
-class ResellerTest extends BaseTest
+class WebhostingTest extends BaseTest
 {
     /**
      * @test

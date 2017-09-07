@@ -8,44 +8,40 @@ use Http\Promise\Promise;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-trait Updateable
+trait Cancelable
 {
     /**
      * @var IClient
      */
     protected $client;
 
-    public function update($id, $data = [], $urlPostfix = ''): ResponseInterface
+    public function cancel($id, $data = [], $urlPostfix = ''): ResponseInterface
     {
         return $this->client
             ->sendRequest(
-                $this->updateRequest($id, $data, $urlPostfix)
+                $this->cancelRequest($id, $data, $urlPostfix)
             );
     }
 
-    public function updateAsync($id, $data = [], $urlPostfix = ''): Promise
+    public function cancelAsync($id, $data = [], $urlPostfix = ''): Promise
     {
         return $this->client
             ->sendRequestAsync(
-                $this->updateRequest($id, $data, $urlPostfix)
+                $this->cancelRequest($id, $data, $urlPostfix)
             );
     }
 
     /**
-     * @apram int $id
+     * @apram int|string $id
      * @param array $data
      * @param string $urlPostfix
      * @return RequestInterface
      */
-    public function updateRequest($id, $data = [], $urlPostfix = '') : RequestInterface
+    public function cancelRequest($id, $data = [], $urlPostfix = '') : RequestInterface
     {
-        $request = new Request('POST', $this->getUpdateUrl($id, $data, $urlPostfix));
+        $request = new Request('POST', $this->endpoint . '/' . $id. $urlPostfix);
         $request = $request->withBody(\GuzzleHttp\Psr7\stream_for(\GuzzleHttp\json_encode($data)));
 
         return $request;
-    }
-
-    public function getUpdateUrl($key, $data = [], $urlPostfix = '') : string {
-        return $this->endpoint . '/' . $key . '/update' . $urlPostfix;
     }
 }

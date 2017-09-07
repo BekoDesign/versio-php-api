@@ -8,6 +8,9 @@ use BekoDesign\versioAPI\Models\DnsTemplate;
 use BekoDesign\versioAPI\Models\Domain;
 use BekoDesign\versioAPI\Models\Reseller;
 use BekoDesign\versioAPI\Models\ResellerPlan;
+use BekoDesign\versioAPI\Models\SSLApprover;
+use BekoDesign\versioAPI\Models\SSLCertificate;
+use BekoDesign\versioAPI\Models\SSLProduct;
 use BekoDesign\versioAPI\Models\TLD;
 use BekoDesign\versioAPI\Models\Webhosting;
 use BekoDesign\versioAPI\Models\WebhostingPlan;
@@ -110,6 +113,27 @@ class Client implements IClient
      */
     public function resellerPlans() : ResellerPlan {
         return new ResellerPlan($this);
+    }
+
+    /**
+     * @return SSLApprover
+     */
+    public function sslApprovers() : SSLApprover {
+        return new SSLApprover($this);
+    }
+
+    /**
+     * @return SSLCertificate
+     */
+    public function sslCertificates() : SSLCertificate {
+        return new SSLCertificate($this);
+    }
+
+    /**
+     * @return SSLProduct
+     */
+    public function sslProducts() : SSLProduct {
+        return new SSLProduct($this);
     }
 
     /**
