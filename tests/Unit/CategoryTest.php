@@ -12,12 +12,11 @@ class CategoryTest extends BaseTest
      */
     public function test_categories_list_has_success_response()
     {
-        $this->assertSame(200,
-            $this->getClient()
-                ->categories()
-                ->list()
-                ->getStatusCode()
-        );
+        $response = $this->getClient()
+            ->categories()
+            ->list();
+
+        $this->assertSame(200, $response->getStatusCode(), $response->getBody()->getContents());
     }
 
     /**
@@ -26,8 +25,12 @@ class CategoryTest extends BaseTest
      */
     public function test_categories_create_has_success_response()
     {
-        $client = $this->getClient();
-        $this->assertSame(201, $this->createCategory('TestCategoryName')->getStatusCode());
+        $response = $this->getClient()
+            ->categories()
+            ->create([
+                'name' => 'TestCategoryName'
+            ]);
+        $this->assertSame(201, $response->getStatusCode(), $response->getBody()->getContents());
     }
 
     /**
@@ -40,17 +43,12 @@ class CategoryTest extends BaseTest
             ->categories()
             ->delete(1);
 
-        $this->assertSame(400, $response->getStatusCode());
+        $content = $response->getBody()->getContents();
+
+        $this->assertSame(400, $response->getStatusCode(), $content);
         $this->assertSame('ObjectDoesNotExist|Category does not exists',
-            json_decode($response->getBody()->getContents())
-                ->error->message);
+            json_decode($content)
+                ->error->message, $content);
     }
 
-    private function createCategory($name) {
-        return $this->getClient()
-            ->categories()
-            ->create([
-                'name' => $name
-            ]);
-    }
 }

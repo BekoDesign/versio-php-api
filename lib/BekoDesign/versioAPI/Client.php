@@ -3,6 +3,7 @@ namespace BekoDesign\versioAPI;
 
 use BekoDesign\versioAPI\Contracts\IClient;
 use BekoDesign\versioAPI\Models\Category;
+use BekoDesign\versioAPI\Models\Contact;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Message\Authentication;
 use Http\Message\Authentication\BasicAuth;
@@ -67,6 +68,13 @@ class Client implements IClient
      */
     public function categories() : Category {
         return new Category($this);
+    }
+
+    /**
+     * @return Category
+     */
+    public function contacts() : Contact {
+        return new Contact($this);
     }
 
     /**
