@@ -22,7 +22,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     {
         parent::__construct($name, $data, $dataName);
 
-        print_r($_ENV);
+        print_r(getenv('VERSIO_USERNAME'));
 
         if(file_exists(__DIR__ . '/../.env')) {
             $dotenv = new \Dotenv\Dotenv(__DIR__ . '/../');
@@ -37,8 +37,8 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     protected function getClient() : Client {
         if(!$this->client) {
             $this->client = new Client(
-                $_ENV[BaseTest::ENV_USERNAME],
-                $_ENV[BaseTest::ENV_PASSWORD],
+                getenv(BaseTest::ENV_USERNAME),
+                getenv(BaseTest::ENV_PASSWORD),
                 Client::VERSIO_URL_TEST,
                 ($host = getenv(BaseTest::ENV_HOST)) ? $host : Client::VERSIO_HOST
             );
