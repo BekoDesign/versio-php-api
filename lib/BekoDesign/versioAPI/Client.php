@@ -4,6 +4,7 @@ namespace BekoDesign\versioAPI;
 use BekoDesign\versioAPI\Contracts\IClient;
 use BekoDesign\versioAPI\Models\Category;
 use BekoDesign\versioAPI\Models\Contact;
+use BekoDesign\versioAPI\Models\DnsTemplate;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Message\Authentication;
 use Http\Message\Authentication\BasicAuth;
@@ -71,10 +72,17 @@ class Client implements IClient
     }
 
     /**
-     * @return Category
+     * @return Contact
      */
     public function contacts() : Contact {
         return new Contact($this);
+    }
+
+    /**
+     * @return DnsTemplate
+     */
+    public function dnsTemplates() : DnsTemplate {
+        return new DnsTemplate($this);
     }
 
     /**
