@@ -1,5 +1,5 @@
 {
-    "name": "BekoDesign/versio-php-api",
+    "name": "bekodesign/versio-php-api",
     "description": "PHP implementation of the new Restfull Versio API",
     "type": "library",
     "license": "MIT",
