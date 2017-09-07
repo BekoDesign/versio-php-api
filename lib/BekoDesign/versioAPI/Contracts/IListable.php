@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 
 interface IListable
 {
-    public function list($data = []) : ResponseInterface;
+    public function list($data = [], $urlPostfix = '') : ResponseInterface;
 
     public function listAsync($data = [], $urlPostfix = '') : Promise;
 

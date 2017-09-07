@@ -2,16 +2,16 @@
 
 namespace BekoDesign\versioAPI\Models;
 
-
 use BekoDesign\versioAPI\Contracts\ICategory;
+use BekoDesign\versioAPI\Contracts\ICreatable;
 use BekoDesign\versioAPI\Contracts\IListable;
+use BekoDesign\versioAPI\Traits\Creatable;
+use BekoDesign\versioAPI\Traits\Deleteable;
 use BekoDesign\versioAPI\Traits\Listable;
 
-class Category implements IListable, ICategory
+class Category implements IListable, ICreatable, ICategory
 {
-    use Listable;
-
-    public $name;
+    use Listable, Creatable, Deleteable;
 
     protected $endpoint = 'categories';
 
@@ -23,6 +23,4 @@ class Category implements IListable, ICategory
     {
         $this->client = $client;
     }
-
-
 }
