@@ -1,4 +1,5 @@
-[![Packagist](https://img.shields.io/packagist/v/BekoDesign/versioAPI.svg)]()
+[![Packagist](https://img.shields.io/packagist/dt/bekodesign/versio-php-api.svg)](https://packagist.org/packages/bekodesign/versio-php-api)
+[![GitHub tag](https://img.shields.io/github/tag/bekodesign/versio-php-api.svg)](https://github.com/BekoDesign/versio-php-api/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Versio PHP API
@@ -13,10 +14,9 @@ and viewing the Categories, TLDS and Products of Versio.
 
 Installation through composer:
 ````
-composer require BekoDesign\VersioAPI
+composer require bekodesign/versio-php-api
 ````
 
-**@Todo:** Submit project to composer
 
 ### Alternative
 
