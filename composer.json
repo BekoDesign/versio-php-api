@@ -1,0 +1,36 @@
+{
+    "name": "BekoDesign/versio-php-api",
+    "description": "PHP implementation of the new Restfull Versio API",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0-dev",
+    "support": {
+        "email": "support@bekodesign.com",
+        "issues": "https://github.com/BekoDesign/Versio-PHP-API/issues"
+    },
+    "authors": [
+        {
+            "name": "Bert Kooij",
+            "email": "bertkooij@bekodesign.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "php-http/httplug": "^1.1",
+        "php-http/message": "^1.6",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/discovery": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "autoload": {
+        "psr-0": { "BekoDesign\\versioAPI": "lib/" }
+    }
+}
