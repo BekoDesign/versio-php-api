@@ -38,9 +38,18 @@ trait Creatable
      */
     public function createRequest($data = [], $urlPostfix = '') : RequestInterface
     {
-        $request = new Request('POST', $this->endpoint . $urlPostfix);
+        $request = new Request('POST', $this->getCreateUrl($data, $urlPostfix));
         $request = $request->withBody(\GuzzleHttp\Psr7\stream_for(\GuzzleHttp\json_encode($data)));
 
         return $request;
+    }
+
+    /**
+     * @param array $data
+     * @param string $urlPostfix
+     * @return string
+     */
+    public function getCreateUrl($data = [], $urlPostfix = '') : string {
+        return $this->endpoint . $urlPostfix;
     }
 }

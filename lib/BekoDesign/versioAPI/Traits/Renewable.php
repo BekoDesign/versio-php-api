@@ -8,38 +8,38 @@ use Http\Promise\Promise;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-trait Deleteable
+trait Renewable
 {
     /**
      * @var IClient
      */
     protected $client;
 
-    public function delete($id, $data = [], $urlPostfix = ''): ResponseInterface
+    public function renew($id, $data = [], $urlPostfix = ''): ResponseInterface
     {
         return $this->client
             ->sendRequest(
-                $this->deleteRequest($id, $data, $urlPostfix)
+                $this->renewRequest($id, $data, $urlPostfix)
             );
     }
 
-    public function deleteAsync($id, $data = [], $urlPostfix = ''): Promise
+    public function renewAsync($id, $data = [], $urlPostfix = ''): Promise
     {
         return $this->client
             ->sendRequestAsync(
-                $this->deleteRequest($id, $data, $urlPostfix)
+                $this->renewRequest($id, $data, $urlPostfix)
             );
     }
 
     /**
-     * @apram int|string $id
+     * @apram int $id
      * @param array $data
      * @param string $urlPostfix
      * @return RequestInterface
      */
-    public function deleteRequest($id, $data = [], $urlPostfix = '') : RequestInterface
+    public function renewRequest($id, $data = [], $urlPostfix = '') : RequestInterface
     {
-        $request = new Request('DELETE', $this->endpoint . '/' . $id. $urlPostfix);
+        $request = new Request('POST', $this->endpoint . '/' . $id . '/renew' . $urlPostfix);
         $request = $request->withBody(\GuzzleHttp\Psr7\stream_for(\GuzzleHttp\json_encode($data)));
 
         return $request;

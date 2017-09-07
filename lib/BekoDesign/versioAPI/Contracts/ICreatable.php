@@ -14,4 +14,7 @@ interface ICreatable
     public function createAsync($data = [], $urlPostfix = '') : Promise;
 
     public function createRequest($data = [], $urlPostfix = '') : RequestInterface;
+
+    public function getCreateUrl() : string;
+
 }
