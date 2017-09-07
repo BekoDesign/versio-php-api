@@ -3,6 +3,17 @@ namespace BekoDesign\versioAPI;
 
 use BekoDesign\versioAPI\Contracts\IClient;
 use BekoDesign\versioAPI\Models\Category;
+use BekoDesign\versioAPI\Models\Contact;
+use BekoDesign\versioAPI\Models\DnsTemplate;
+use BekoDesign\versioAPI\Models\Domain;
+use BekoDesign\versioAPI\Models\Reseller;
+use BekoDesign\versioAPI\Models\ResellerPlan;
+use BekoDesign\versioAPI\Models\SSLApprover;
+use BekoDesign\versioAPI\Models\SSLCertificate;
+use BekoDesign\versioAPI\Models\SSLProduct;
+use BekoDesign\versioAPI\Models\TLD;
+use BekoDesign\versioAPI\Models\Webhosting;
+use BekoDesign\versioAPI\Models\WebhostingPlan;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Message\Authentication;
 use Http\Message\Authentication\BasicAuth;
@@ -67,6 +78,83 @@ class Client implements IClient
      */
     public function categories() : Category {
         return new Category($this);
+    }
+
+    /**
+     * @return Contact
+     */
+    public function contacts() : Contact {
+        return new Contact($this);
+    }
+
+    /**
+     * @return DnsTemplate
+     */
+    public function dnsTemplates() : DnsTemplate {
+        return new DnsTemplate($this);
+    }
+
+    /**
+     * @return Domain
+     */
+    public function domains() : Domain {
+        return new Domain($this);
+    }
+
+    /**
+     * @return Reseller
+     */
+    public function resellers() : Reseller {
+        return new Reseller($this);
+    }
+
+    /**
+     * @return ResellerPlan
+     */
+    public function resellerPlans() : ResellerPlan {
+        return new ResellerPlan($this);
+    }
+
+    /**
+     * @return SSLApprover
+     */
+    public function sslApprovers() : SSLApprover {
+        return new SSLApprover($this);
+    }
+
+    /**
+     * @return SSLCertificate
+     */
+    public function sslCertificates() : SSLCertificate {
+        return new SSLCertificate($this);
+    }
+
+    /**
+     * @return SSLProduct
+     */
+    public function sslProducts() : SSLProduct {
+        return new SSLProduct($this);
+    }
+
+    /**
+     * @return TLD
+     */
+    public function tld() : TLD {
+        return new TLD($this);
+    }
+
+    /**
+     * @return Webhosting
+     */
+    public function webhosting() : Webhosting {
+        return new Webhosting($this);
+    }
+
+    /**
+     * @return WebhostingPlan
+     */
+    public function webhostingPlans() : WebhostingPlan {
+        return new WebhostingPlan($this);
     }
 
     /**

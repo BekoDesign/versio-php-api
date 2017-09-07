@@ -1,7 +1,11 @@
 [![Packagist](https://img.shields.io/packagist/v/BekoDesign/versioAPI.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Versio-PHP-API
-PHP implementation of the new Restfull Versio API (https://www.versio.nl/RESTapidoc/)
+# Versio PHP API
+This is a PHP library for the new rest API of Versio (Hostingprovider) as described here: https://www.versio.nl/RESTapidoc/.
+
+This library can manage Domains, Reseller Hosting Accounts, WebHosting Accounts and SSL certificates as well as managing 
+and viewing the Categories, TLDS and Products of Versio.
 
 ## Installation
 
@@ -20,7 +24,7 @@ Download [release](https://github.com/bekodesign/Versio-PHP-API/releases "Github
 
 ## Usage
 
-**@Todo:** Write documentation
+Please reference the [Wiki pages](https://github.com/BekoDesign/Versio-PHP-API/wiki) for the documentation.
 
 ## Testing
 
@@ -36,13 +40,14 @@ VERSIO_HOST=versio.nl
 VERSIO_USERNAME={YOUR VERSIO USERNAME}
 VERSIO_PASSWORD={YOUR VERSIO PASSWORD}
 ````
-Replace **{YOUR VERSIO USERNAME}** and **{YOUR VERSIO PASSWORD}** with the credentials you use to sign in at https://www.versio.nl/login?uri=/customer/
+Replace **{YOUR VERSIO USERNAME}** and **{YOUR VERSIO PASSWORD}** with the credentials you use to sign in 
+at https://www.versio.nl/login?uri=/customer/
 
 You can also change the host to versio.uk, versio.nl, versio.be, versio.eu. But the default fallback is versio.nl. 
 
 ## License
 
-This project is released under the [MIT][link-license] License.
+This project is released under the [MIT](https://github.com/beko1997/Versio-PHP-API/blob/master/LICENSE) License.
 
 ## Issues
 
