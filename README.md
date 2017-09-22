@@ -52,7 +52,7 @@ This project is released under the [MIT](https://github.com/beko1997/Versio-PHP-
 
 ## Issues
 
-Please report any problems via: [GitHub issues](https://github.com/BekoDesign/Versio-PHP-API/issues)
+Please report any problems or suggestions via: [GitHub issues](https://github.com/BekoDesign/Versio-PHP-API/issues)
 
 ## Contributors
 Feel free to create a Pull Request.
