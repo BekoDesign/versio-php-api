@@ -46,6 +46,8 @@ at https://www.versio.nl/login?uri=/customer/
 
 You can also change the host to versio.uk, versio.nl, versio.be, versio.eu. But the default fallback is versio.nl. 
 
+**Important:** Please note that the testing API of Versio currently has an issue. The testing API is actually behaving like the real API and does create entities and makes payments. See [#7](https://github.com/BekoDesign/versio-php-api/issues/7) for more information.
+
 ## License
 
 This project is released under the [MIT](https://github.com/beko1997/Versio-PHP-API/blob/master/LICENSE) License.
